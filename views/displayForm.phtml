@@ -1,0 +1,25 @@
+<form class="form" action="index.php?route=addNewUser" method="POST">
+
+    <fieldset>
+        
+        <legend>Tous les champs sont requis</legend>
+        
+            <input class="infosConnex" type="text" name="last_name" id="last_name" placeholder="Votre nom" required="require"/>
+            <input class="infosConnex" type="text" name="first_name" id="first_name" placeholder="Votre prénom" required="require"/>
+            <input class="infosConnex" type="email" name="email" id="email" placeholder="Votre email" required="require"/>
+            <input class="infosConnex" type="password" name="password" id="password" placeholder="Votre mot de passe"required="require"/>
+            
+            <label>Votre date de naissance</label>
+            <input class="infosConnex" type="date" name="birthdate" id="date" placeholder="Votre date de naissance" required="require"/>
+            
+            <button class="infosConnex" type="submit" value="Soumettre"/>Soumettre</button> 
+ 
+    </fieldset>
+    
+<?php if( isset($_SESSION['message'] )):?>
+    
+    <p><?=$_SESSION['message']?></p>
+    
+<?php endif; ?>
+    
+</form>

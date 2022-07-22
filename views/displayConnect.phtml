@@ -1,0 +1,24 @@
+<form class="form" action="index.php?route=submitConnect" method="POST">
+    
+    <fieldset>
+        
+        <legend>Veuillez entrer vos informations de connexion</legend>
+            
+            <figure>
+                
+                <input class="infosConnex" type="email" name="email" id="email" placeholder="Votre email" required="require"/>
+                <input class="infosConnex"type="password" name="password" id="password" placeholder="Votre mot de passe"required="require"/>
+            
+                <button class="infosConnex"type="submit" value="Soumettre"/>Soumettre</button>
+                
+            </figure>
+            
+<?php if( isset( $_SESSION['message']) ) : ?>
+
+     <p><?= $_SESSION['message'] ?></p>
+               
+<?php endif;?>
+
+    </fieldset>
+    
+</form>

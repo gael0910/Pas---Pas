@@ -1,0 +1,29 @@
+<?php foreach($infos as $info): ?>
+
+        <form action="index.php?route=displayInfos&id=<?= $info['user_id'] ?>" method="POST" class="infosDossierForm">
+            
+            <table class="infos">
+                
+                <thead>
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>Identité</th>
+                        <th>Date d'enregistrement</th>
+                        <th>Anniversaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?= $info['user_id']?></td>
+                        <td><?= $info['last_name']?> <?=$info['first_name'] ?></td>
+                        <td><?= $info['registration'] ?></td>
+                        <td><?= $info['birthdate'] ?></td>
+                    </tr>
+                <!-- Afficher les données de l'utilisateur . -->
+                </tbody>
+                
+            </table>
+            
+        </form>
+        
+<?php endforeach; ?> 

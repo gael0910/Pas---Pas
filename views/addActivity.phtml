@@ -1,0 +1,23 @@
+<section>
+          
+  <form class = "form" action = "index.php?route=addActivity" method="POST">
+                
+    <label for="activity_name">Nom de l'activité</label>
+    <input type= "text" name = "activity_name" id = "activity_name" />
+    
+    <label for="activity_cat" >Nom de la catégorie</label>
+    <input type= "text" name = "activity_cat" id = "activity_cat" />
+    
+    <label for="activity_description">Description de l'activié</label>
+    <textarea  name="activity_description" id = "activity_description"></textarea>
+                
+        <select name="is_collective" id="is_collective">  
+            <option value="0">Activité individuelle</option>
+            <option value="1">Activité collective</option>
+        </select>
+                
+          <button type="submit">Valider</button>
+                
+  </form>
+            
+</section>

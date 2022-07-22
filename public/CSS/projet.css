@@ -1,0 +1,792 @@
+/*Fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Lato:wght@300&family=Smooch&family=Source+Sans+Pro:wght@200&family=The+Nautigal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Lato:wght@300&family=Poppins:wght@200&family=Smooch&family=Source+Sans+Pro:wght@200&family=The+Nautigal&display=swap');
+
+/* Variables*/
+:root{
+    
+    --font-size:1rem;
+    --background-color:#FAF0C5;
+    
+}
+
+.light-mode{
+    
+    --boat-color:#222;
+    --boat-background-color:#F0F0F0;
+    
+}
+
+.dark-mode{
+    
+    --boat-color:#FFF;
+    --boat-background-color:#000;
+    
+}
+
+
+/* Reset*/
+*{
+    
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+a{
+    
+    text-decoration:none;
+    
+}
+
+ul{
+    
+    list-style:none;
+    
+}
+
+/* Basic style*/ 
+body{
+    
+    font-family:'Poppins', sans-serif;
+    font-size:var(--font-size);
+    background-color:var(--background-color);
+    
+}
+
+header{
+    
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    height:auto;
+    justify-content:center;
+    
+}
+
+.canvas{
+    
+    width:100vw;
+    height:auto;
+}
+
+#photo1{
+    
+    display:none;
+      
+}
+
+.main{
+    
+    padding:2rem;
+    
+}
+
+title,h2 ,h3{
+    
+    text-align:center;
+    padding:1rem 0 1rem 0;
+      
+}
+
+.myLife{
+    
+    font-size:3rem;
+    font-family:'The Nautigal', cursive;
+    
+}
+
+.coordonates{
+    
+    font-weight:bold;
+
+}
+
+section, .footer{
+    
+    padding:0 1rem 0 1rem;
+      
+}
+
+.left .right{
+    
+    display:grid;
+    
+}
+
+.defi,.baseball,.montain{
+    
+    width:100%;
+    height:auto;
+
+}
+
+/*masquer l'article  de la confidentialité pour l'afficher en javscript*/
+.prive{
+    
+    display:none;
+    
+}
+
+.open_footer.prive{
+    
+    display:block;
+    width:100%;
+    cursor:pointer;
+    
+}
+
+/**/
+
+.mySelf{
+    
+    padding-left : 1rem;
+    padding-right : 1rem;
+    font-family : Smooch,sans-serif;
+    font-size : 1.5em;
+    
+}
+
+.icon{
+    
+    display:none;
+    
+}
+
+.contact{
+    
+    text-align:center;
+    
+}
+
+.form{
+    
+    width:100%;
+    height:auto;
+    margin-top:2rem;
+    margin-bottom:2rem;
+    padding-bottom:2rem;
+    font-size:2rem;
+    
+}
+
+fieldset{
+    
+    width:100%;
+    padding:1rem 1rem 2rem 1rem;
+    margin:0;
+    
+}
+
+.form legend{
+    
+    font-size:1rem;
+    
+}
+
+label{
+    
+    font-size:1rem;
+}
+
+.activities{
+    
+    text-align:center;
+    
+}
+
+/*affichage des commentaires validés*/
+.commentsValid{ 
+    
+    width : 100%;
+    border : 0.5rem solid black;
+    text-align:center;
+    align-items:space-around;
+    display:grid;
+    line-height:2rem;
+    margin-top:1rem;
+
+}
+.avis{
+    
+    width:100%;
+}
+
+.head{
+    
+    display:block;
+    border-collapse:separate;
+    border-spacing:1rem;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+.comment{
+    
+    font-family:Smooch,cursive;
+    font-size:1.5rem;
+    
+}
+/**/
+
+/*Affichage des commentaires en attente de validation*/
+
+.waitComment{
+    
+    justify-content:center;
+    align-items:center;
+    
+}
+/**/
+header{
+    
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      width:100%;
+      height:auto;
+      justify-content:center;
+      
+}
+
+.canvas{
+    
+      width:100vw;
+      height:auto;
+      
+}
+
+
+/*affichage du tableau commentaire à valider*/
+table{
+    
+    border-collapse:collapse;
+    width : 100%;
+    border : 0.3rem solid #000000;
+    text-align:center;
+    display:grid;
+    line-height:2rem;
+    margin-top:1rem;
+    padding:1rem;
+    padding-top:1rem;
+    
+}
+
+/*afficher le informations des utilisateurs*/
+.search{
+    
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    
+}
+
+.infos{
+    
+    display:block;
+    table-layout:auto;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    border:none;
+    margin-top:0.5rem;
+    
+}
+
+.infos td{
+    
+    border:1px solid black;
+    padding:10px;
+    
+}
+
+.infos th{
+    
+    border:1px solid black;
+    padding:10px;
+}
+/**/
+
+/* Barre de navigation*/
+
+.boat{
+
+    display:flex;
+    align-items : center;
+    justify-content:space-between;
+    height:4rem;
+    padding:10px;
+    color:var(--boat-color);
+    background:var(--boat-background-color);
+}
+
+
+/*animation chargement en attendant l'affichage de l'image et l'animation en canvas */
+
+
+.loader
+{
+    position:absolute;
+    width:100%;
+    height:8%;
+    background-color:rgba(0, 0, 0, 0.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.letter
+{
+    color:#484848;
+    font-size:1rem;
+    letter-spacing:15px;
+    animation:light 1.2s linear infinite;
+}
+
+/*timing de l'animation*/
+@keyframes light
+{
+    0%{
+        color:#fff900;
+        text-shadow:0 0 7px #fff900;
+       }
+    90%{
+        color:#484848;
+        text-shadow:none;
+        }
+    100%{
+        color:#fff900;
+        text-shadow:0 0 7px #fff900;
+        }
+}
+
+/*animation-delay permet de définir l'attente d'une animation*/
+.letter:nth-child(1){animation-delay : 0.1s;}
+.letter:nth-child(2){ animation-delay : 0.2s;}
+.letter:nth-child(3){animation-delay : 0.3s;}
+.letter:nth-child(4){ animation-delay : 0.4s;}
+.letter:nth-child(5){animation-delay : 0.5s;}
+.letter:nth-child(6){ animation-delay : 0.6s;}
+.letter:nth-child(7){animation-delay : 0.7s;}
+.letter:nth-child(8){ animation-delay : 0.8s;}
+.letter:nth-child(9){animation-delay : 0.9s;}
+.letter:nth-child(10){ animation-delay : 1s;}
+
+/*arrêt de l'animation avec function dans projet.js*/
+.endlight
+{
+    opacity:0;
+    transition:opacity 3.5s ease-in-out;
+}
+/*fin de l'animation chargement*/
+
+
+@media screen and (max-width:767.90px){
+
+.map{
+    
+    display:flex;
+    flex-direction:column;
+    width:0;
+    height:calc(100vh - 4rem);
+    position: absolute;
+    top:22rem;
+    right:0;
+    background:var(--boat-background-color);
+    overflow:hidden;
+}
+
+.open_boat .map{
+    
+    width:100%;
+    
+}
+
+.item{
+    
+    transform:translateX(101%);
+}
+
+.open_boat .item{
+    
+    transform:translateX(0%);
+}
+
+.item > a{
+    
+    display:block;
+    font-size:1.4rem;
+    padding:1rem;
+    color:var(--boat-color);
+    transition:all .4s ease-in-out;
+}
+
+.item > a:hover{ 
+    
+    padding-left: 2rem;
+    letter-spacing: 5px;
+    
+}
+
+/*Toggle menu*/
+
+.burger{
+    
+    display:block;
+    position:relative;
+    padding:0;
+    width:45px;
+    height:45px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
+
+.bar{
+    
+    display:block;
+    width:45px;
+    height:4px;
+    background:var(--boat-color);
+    border-radius:3px;
+    transition:all .5s ease-in-out;
+}
+
+.open_boat .bar{
+    
+    width:0;
+    background:transparent;
+}
+
+.bar::before,.bar::after{
+    
+    content:"";
+    width:45px;
+    height:4px;
+    position:absolute;
+    left:0;
+    background:var(--boat-color);
+    border-radius:3px;
+    transition:all .5s ease-in-out;
+}
+
+.bar::before{
+    
+    transform:translateY(-0.6rem);
+}
+
+.open_boat .bar::before{
+    
+    transform:rotate(45deg);
+}
+
+.bar::after{
+    
+    transform:translateY(0.6rem);
+}
+
+.open_boat .bar::after{
+    
+    transform:rotate(-45deg);
+}
+/*Bonus animations*/
+
+.open_boat .first{
+    
+    transition:all 1s ease-out;
+}
+.open_boat .second{
+    
+    transition:all 1.2s ease-out;
+}
+.open_boat .third{
+    
+    transition:all 1.3s ease-out;
+}
+.open_boat .fourth{
+    
+    transition:all 1.4s ease-out;
+}
+.open_boat .fifth{
+    
+    transition:all 1.5s ease-out;
+}
+.open_boat .sixth{
+    
+    transition:all 1.6s ease-out;
+}
+.open_boat .seventh{
+    
+    transition:all 1.7s ease-out;
+}
+.open_boat .eighth{
+    
+    transition:all 1.8s ease-out;
+}
+.open_boat.nineth{
+    
+    transition:all 1.9s ease-out;
+}
+
+}
+
+/* FIN MENU BURGER*/
+
+.defi,.baseball,.montain{
+    
+    padding:1rem 0 1rem 0;
+}
+
+.baseball{
+    
+    height:60%;
+}
+
+.infos{
+    
+    font-size:40%;
+
+}
+
+
+
+@media screen and (min-width:768px) and (max-width:1023.90px){
+
+/* Boat*/
+
+
+.boat{
+
+    justify-content:space-between;
+    padding-top:3rem;
+    padding-bottom:3rem;
+    height:5rem;
+    width:100%;
+} 
+
+.boat_logo{
+    
+    display:none;
+}
+
+.map{
+    
+    display:flex;
+    width:100%;
+}
+
+.item{
+    
+    display:flex;
+    padding: 0 5px;
+
+}
+.item > a{
+    
+    color:var(--boat-color);
+    padding : 0 5px;
+    justify-content:center;
+    align-items:space-between;
+}
+    
+.burger{
+    
+    display:none;
+}
+
+.item > a::after{
+    
+    display:block; 
+    content:"";
+    width:0;
+    height:1px;
+    background-color:var(--boat-color);;
+    transition:width .4s;
+}
+.item:hover > a::after{
+    
+    width:100%;
+}
+
+.left
+{
+    display:grid;
+    padding-left:2rem;
+    padding-right:2rem;
+}
+.right
+{
+   display:grid;
+   padding:1rem;
+}
+.defi,.baseball
+{
+    width:100%;
+    height:70vh;
+}
+.montain
+{
+    width:100%;
+    height:auto;
+    padding-left:1rem;
+}
+
+.search{
+    
+    width:100%;
+}
+
+.infos{
+    
+    font-size:100%;
+}
+}
+
+@media screen and (min-width:1024px){
+
+/*and (max-width:2560px)*/
+.boat{
+
+    justify-content:space-between;
+    padding:3rem;
+} 
+
+.map{
+    
+    display:flex;
+}
+
+.item{
+    
+    display:flex;
+    padding:0 10px;
+}
+
+.item > a{
+    
+    color:var(--boat-color);
+    padding:0 10px;
+}
+    
+.burger{
+    
+    display:none;
+}
+
+.item > a::after{
+    
+    display:block; 
+    content:"";
+    width:0;
+    height:1px;
+    background-color:var(--boat-color);;
+    transition:width .4s;
+}
+
+.item:hover > a::after{
+    
+    width:100%;
+}
+
+.left{
+    
+    display:flex;
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-top:1rem;
+}
+
+.right{
+    
+   display:grid; 
+   padding-left:2rem;
+   padding-right:2rem;
+   
+}
+
+.back{
+    
+    display:grid;
+}
+
+.baseball{
+    
+    width : 100%;
+    height : auto;
+    padding-left:0.5rem;
+    padding-bottom:4rem;
+    
+}
+
+.defi{
+    
+    width:100%;
+    max-width:60rem;
+    height:auto;
+    padding-left:6rem;
+    
+}
+
+.montain{
+    
+    width:100%;
+    max-width:60rem;
+    height:auto;
+    padding-left:6rem;
+    
+}
+
+.coordonates{
+    
+    font-size:2rem;
+    
+}
+
+.search{
+    
+    width:100%;
+}
+
+.infos{
+    
+    font-size:140%;
+}
+
+.selection{
+    
+    width:60%;
+    font-size:3vw;
+}
+
+.commentsValid{
+    
+    display:flex;
+}
+
+fieldset{
+    
+    width:100%;
+    font-size:200%;
+    
+}
+
+.form legend{
+    
+    font-size:2rem;
+}
+
+.infosConnex{
+    
+    height:5vh;
+    width:30%;
+    font-size:1rem;
+}
+
+
+}
+/*@media screen and (min-width : 901px) and (max-width:1024px)*/
+/*@media screen and (min-width : 1025px)*/
+
+

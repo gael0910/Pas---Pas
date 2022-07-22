@@ -1,0 +1,34 @@
+<section>
+    
+    <h2>Les commentaires</h2>
+    <h3><a href="index.php?route=displayComment">Pour votre avis, c'est ici ! </a></h3>     
+   
+    
+<?php if($comValid) : ?>
+    
+    <?php foreach($comValid as $comment): ?>
+    
+        <table class="commentsValid">
+            
+            <thead class="head">
+                <tr>
+                    <th>Date: Le <?= $comment['created_at'] ?></th>
+                    <th>Par: <?= $comment['first_name'] ?> <?= $comment['last_name'] ?></th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td class="comment">"<?= $comment['content'] ?>"</td>
+                </tr>
+            </tbody>
+                
+        </table>
+        
+    <?php endforeach; ?>
+
+    
+<?php endif; ?>
+
+    
+</section>

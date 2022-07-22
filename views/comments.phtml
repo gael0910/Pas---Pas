@@ -1,0 +1,75 @@
+<section>
+    
+    <h2>Les commentaires à valider</h2>
+        <h3><a href="index.php?route=displayCommentValid">page des commentaires</a></h3>
+   
+    
+<?php foreach( $comments as $comment ) : ?>
+
+    <table class="waitComment">
+        
+        <thead>
+            <tr>
+                <th>Commentaire numéro : <?= htmlspecialchars( $comment['id'] ) ?></th>
+            </tr>
+        </thead>
+        
+    </table>
+       
+    
+<?php if($comment['validated'] === 1 ) : ?>
+    
+    <table>
+        
+        <thead class="head">
+            <tr>
+                <th>Date: <?= $comment['created_at'] ?></th>
+                <th>Identifiant: <?= $comment['user_id'] ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Commentaire: <?= $comment['content'] ?></td>
+            </tr>
+        </tbody>
+        
+    </table>
+    
+
+
+<?php elseif(isset($_SESSION['admin']) && $comment['validated'] === 0): ?>
+
+    <table>
+        
+        <thead>
+            <tr>
+                <th>Date: <?= $comment['created_at'] ?></th>
+                <th>Identifiant: <?= $comment['user_id']?></th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>Commentaire: <?= $comment['content'] ?></td>
+                
+                    <form action="index.php?route=manageComment" method="POST">
+                        <td><input type="hidden" name="commentId" value ="<?=$comment['id'];?>"/></td>
+                        <td>
+                            <select name="validation">
+                                <option value="0">Supprimer</option>
+                                <option value="1">Valider</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button type ="submit">Envoyer</button>
+                        </td>
+        
+                    </form>
+            </tr>
+        </tbody>
+    </table>
+
+<?php endif;?>    
+<?php endforeach; ?>
+    
+</section>

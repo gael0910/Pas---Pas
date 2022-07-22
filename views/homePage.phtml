@@ -1,0 +1,78 @@
+<?php if (isset($_SESSION['user'])):?>
+        
+        <h2>Bienvenue <?= ($_SESSION['user']['last_name'] );?> !</h2>
+        
+<?php elseif(isset($_SESSION['admin'])) :?>      
+        <h2>Bienvenue <?=($_SESSION['admin']['first_name']);?> !</h2>
+        
+
+<?php endif;?>
+
+<container class="container">
+            
+    <section>
+            
+        <h3>C'est quoi le coaching ?</h3>
+            
+            <article class="left" id="left">
+                    
+                <div>
+                    <p>Le parcours de vie d’une personne n’est pas droit, il est semé d’obstacles à franchir dès l’enfance, de joies, de réussites, d’échecs, et surtout d’expériences.</p>
+                    <p>Comprendre comment toutes ces expériences font grandir un enfant pour devenir l’adulte de demain a donc son importance.</p>
+                    <p>Il arrive parfois que des personnes rencontrent des obstacles qu’elles n’arrivent pas à franchir (même dans l’enfance).</p>
+                    <p>Le coaching en général permet aux personnes de tous âges d’évoluer personnellement, professionnellement et socialement, d’accepter et dépasser des situations difficiles, de se rendre compte parfois tout simplement de la situation, de faire émerger des objectifs ou des envies de changement, connaître leurs ressources et de les mettre à profit dans la réussite de leurs projets.</p>
+                </div>
+                    
+                    <img  class="baseball"src="https://cdn.pixabay.com/photo/2016/06/29/23/06/baseball-1488004__340.jpg" alt="photo d'un entraineur de base-ball avec un enfant"></img>
+                
+            </article>
+                
+            
+    </section>
+    
+    <section>
+            
+        <h3>Le coaching parental ?</h3>
+            
+            <article class="right" id="right">
+                    
+                <div class="para">
+                          
+                    <p>Un accompagnateur de la parentalité: peut intervenir à tout moment de la vie de l’enfant jusqu’à l’adolescence, peut intervenir lors d’évènements traumatisants (divorce, deuil, harcèlement, stress d’un examen, perte d’un animal, déménagement…) pour corriger les problèmes de comportement lié à ces évènements, accompagner les parents dans l’éducation de leurs enfants, problèmes comportementaux et sociaux, dans les difficultés à communiquer…</p>
+                    <p>Un facilitateur relationnel: relation parents/enfants, parents/ados, améliorer ou rétablir le dialogue, les échanges, la compréhension de l’enfant et de ses réactions au monde qui l’entoure et aux évènements qu’il vit.</p>
+                    <p>Le coach peut recevoir dans un bureau ou se déplacer au domicile de l’enfant et des parents en fonction de la situation:</p>
+                    <p>Un enfant qui a du mal à communiquer avec ses parents, il sera préférable de le voir en dehors du domicile et seul.</p>
+                    <p>Un enfant avec des problèmes de comportement en revanche, il est utile pour le coach de comprendre l’environnement dans lequel il évolue (pour identifier les problèmes).</p>
+                     
+                </div>
+            
+                    <img class="montain" src="https://cdn.pixabay.com/photo/2016/11/08/05/20/sunset-1807524__340.jpg" alt="photo de deux personnes qui gravissent une montagne"/>
+            
+            </article>
+            
+    </section>
+    
+    <section>
+            
+        <h3>Le coaching en développement personnel ?</h3>
+            
+            <article class="left back" id="left">
+                    
+                <div>
+                    
+                    <p>Accompagner, conseiller, aider les personnes de tous âge à atteindre leurs objectifs personnels et professionnels, à passer une difficulté de la vie, à affronter une situation stressante (gestion du stress),</p>
+                    <p>Apporter des outils afin d’aider les personnes à réussir leurs relations sociales et professionnelles, favoriser l’estime de soi, la gestion du temps, du stress,</p> 
+                    <p>Le coaching en développement personnel peut être mené dans un bureau (ou par Visio en fonction de la demande), au domicile de la personne s’il elle se sent plus l’aise.</p>
+                    <p>Il peut également s’agir de séances collectives, après avoir eu un premier rendez-vous seul.</p>
+                    <p>Les séances collectives concernent des thématiques comme l’estime de soi, la gestion du stress. En effet, les séances collectives permettent aux personnes le désirant d’échanger avec les autres (groupe de paroles), et de ne pas se sentir isolé dans la problématique rencontrée, de s’entraider.</p>
+                
+                </div>
+            
+                    
+                     <img class="defi"src="https://media.gettyimages.com/photos/photo-depicting-the-person-who-focuses-on-the-target-picture-id1249041775?k=20&m=1249041775&s=612x612&w=0&h=1XQHdAiKSs_K6jfe3YrYG8o2ToZRcrN40J7x8CASuMs=" alt="photo d'une personne qui relève un défi"/>
+            </article>
+            
+    </section>
+    
+</container>
+        

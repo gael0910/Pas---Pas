@@ -1,0 +1,27 @@
+<?php if (isset($_SESSION['user'])):?>
+        
+        <h3>Bonjour <?= ($_SESSION['user']['first_name'])?> !</h3>
+        
+<?php endif;?>
+
+    <div class="newComment">
+
+        <form action="index.php?route=addComment" method="POST">
+        
+            <fieldset>
+            
+                <legend>Racontez-nous votre expérience:</legend>
+            
+                    <textarea class= "avis" id="story" name="content"
+                        rows="10" cols="40">
+                
+                    </textarea>
+            
+                        <button type="submit">Valider</button>
+            
+        </fieldset>
+        
+    </form>
+    
+</div>
+ 

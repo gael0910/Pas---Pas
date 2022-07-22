@@ -1,0 +1,19 @@
+<section class="search" id="search">
+            
+    <h3><label for="tri">Recherche renseignements:</label></h3>
+    
+        <select class="selection" name="tri" id="tri">
+            
+            <option value="" selected>Sélection</option>
+            <option value="user_id">Par identification utilisateur</option>
+            <option value="name">Par Nom et Prénom</option>
+            <option value="registration">Par date de création de compte</option>
+            <option value="birthdate">Par date d'anniversaire</option>
+            
+        </select>
+        
+            <div class="target" id="target"><?php include 'views/searchInfos.phtml'; ?></div>
+
+
+</section>
+<script src="JS/ajax.js"></script>

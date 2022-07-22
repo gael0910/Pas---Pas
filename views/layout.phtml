@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projet</title>
+    <link rel="stylesheet" href="public\CSS\projet.css" type="text/css" />
+</head>
+
+<body>
+    
+    <nav class="boat dark-mode" id="surf" role="navigation">
+                
+        <div class="boat_logo">Pas-à-Pas</div>
+                
+            <ul class="map" id="menu">
+                        
+                <li class="item first"><a href="index.php?route=displayContact">Contact</a></li>
+                <li class="item second"><a href="index.php?route=homePage">Accueil</a></li>
+                    
+<?php if(!isset($_SESSION['user']) && (!isset($_SESSION['admin']))): ?>   
+                
+                <li class="item third"><a href="index.php?route=displayConnect">Connexion</a></li>
+                <li class="item fourth"><a href="index.php?route=displayForm">Créer votre compte</a></li>
+
+<?php endif;?>
+                
+                <li class="item fifth"><a href="index.php?route=activities">Activités</a></li>
+                <li class="item sixth"><a href="index.php?route=displayCommentValid">Commentaires</a></li>
+
+<?php if( isset( $_SESSION['admin'] ) ) : ?>
+              
+                <li class="item seventh"><a href="index.php?route=comments">Commentaires en attente</a></li>
+                <li class="item eighth"><a href="index.php?route=displayInfos">Informations sur les utilisateurs</a></li>
+
+<?php endif; ?>
+
+<?php if(isset($_SESSION['user']) || isset($_SESSION['admin'])): ?>
+
+                 <li class="item nineth"><a href="index.php?route=deconnexion">Déconnexion</a></li>
+                    
+<?php endif; ?>
+
+            </ul>
+                
+                <button class="burger"><span class="bar"></span></button>
+                    
+    </nav>
+            
+        <header>
+            
+             <h1 class="title" id="title">Pas-à-Pas</h1>
+            
+                <div class="loader">
+                    
+                    <span class="letter">C</span>
+                    <span class="letter">H</span>
+                    <span class="letter">A</span>
+                    <span class="letter">R</span>
+                    <span class="letter">G</span>
+                    <span class="letter">E</span>
+                    <span class="letter">M</span>
+                    <span class="letter">E</span>
+                    <span class="letter">N</span>
+                    <span class="letter">T</span>
+                    
+                </div>
+                
+               
+                <img class="photo1" id="photo1" src="public/images/plage.jpg" alt="photo de plage"/>
+                    <canvas class="canvas"id="canvas" width ="1200" height="400"></canvas>
+          
+            <h2>Elise Estrade coach en parentalité et en développement personnel</h2>
+            <h2 class="myLife"><a href="index.php?route=mySelf">A propos</a></h2>
+            
+        </header>
+        
+        <main class="main" role="main">
+            <?php include_once $view; ?>
+        </main>
+        
+        <footer class="footer" id="footer">
+            
+            <div class="icon" id="icon">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter-square"></i>
+            </div>
+            
+                <h3 class="private">Confidentialité, protection des données<span id="foot">(voir plus)</span></h3>
+                
+                    <article class="prive" id="prive">
+                        
+                        <p>Le métier de coach est une profession certifiée mais pas réglementé, cependant, il y a les mêmes conditions de confidentialité concernant la personne et ses informations personnelles que pour un bilan de compétences...</p>
+                        <p>Principe de volontariat du bénéficiaire:
+                            Le consultant s‘engage à réaliser le coaching uniquement avec le consentement du bénéficiaire.</p>
+                        <p>Signature d’un contrat:
+                            Spécifiant le nombre de séances, le prix, et les conditions de réalisations de celle-ci.</p>
+                        <p>Principe de confidentialité:
+                            La révélation à caractère secret par une personne qui en est dépositaire soit par état soit par profession, soit en raison d’une fonction ou d’une mission temporaire, est punie d’un an d’emprisonnement et de 15000 euros d’amende.</p>
+                        <p>Principe d’intégrité:
+                                Respecter la confidentialité et à ne divulguer aucune information, sauf accord écrit avec le bénéficiaire. Agir dans le cadre strictement légal et ne pas encourager une conduite ou habitude malhonnête, déloyale, non professionnelle ou discriminatoire.</p>
+                    </article>
+            
+        </footer>
+        
+        </container>
+        
+   
+ <script src="JS/canvas.js"></script>
+ <script src="JS/ajax.js"></script>
+ <script src="JS/projet.js"></script>
+ 
+</body>
+</html>

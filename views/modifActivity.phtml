@@ -1,0 +1,31 @@
+<section>
+  
+<?php if(isset($_SESSION['admin'])) : ?> 
+
+    <form class = "form" action = "index.php?route=modifActivity" method="POST">
+      
+<?php endif; ?>
+
+      <label for="activity_name">Nom de l'activité</label>
+          <input type= "text" name = "activity_name" id = "activity_name"  value="<?=$activity['activity_name']?>"/>
+          
+      <label for="activity_cat" >Nom de la catégorie</label>
+          <input type= "text" name = "activity_cat" id = "activity_cat" value="<?=$activity['activity_cat']?>"/>
+          
+      <label for="activity_description">Description de l'activié</label>
+          <textarea  name="description" id = "description"value="<?=$activity['description']?>"></textarea>
+          
+          <input type="hidden" name="id" value="<?=$_GET['activityID']?>"/>
+            <select name="is_collective" id="is_collective"> 
+            
+              <option value="0" <?= $activity['is_collective'] === 0 ? 'selected' : '' ?>>Activité individuelle</option>
+              <option value="1" <?= $activity['is_collective'] === 1 ? 'selected' : '' ?>>Activité collective</option>
+              
+            </select>
+            
+          <button type="submit">Valider</button>
+        
+        
+    </form>
+    
+</section>

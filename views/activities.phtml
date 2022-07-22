@@ -1,0 +1,27 @@
+<section class="activities">
+
+<?php if(isset($_SESSION['admin'])) : ?>
+    
+    <a href="index.php?route=displayFormActivity">Ajouter une activité</a>
+    
+<?php endif; ?>
+
+<?php foreach($activities as $activity) : ?>
+
+    <h2><?= $activity['activity_cat'] ?></h2>
+    <h3><?= $activity['activity_name'] ?></h3>
+
+    <p><?= $activity['is_collective'] === 0 ? '<span>Activité individuelle</span>': '<span>Activité en groupe</span>' ?></p>
+    <p><?= $activity['description'] ?></p>
+    
+<?php if(isset($_SESSION['admin'])) : ?>
+    <a href="index.php?route=displayModifActivity&activityID=<?=$activity['id']?>">Modifier</a>
+    <a href="index.php?route=deleteActivity&activityID=<?=$activity['id']?>">Supprimer</a>
+    
+<?php endif; ?>
+
+<?php endforeach; ?>
+
+    
+</section>
+
